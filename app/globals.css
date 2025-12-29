@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Dubai';
+  src: url('/Font/Dubai-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Dubai';
+  src: url('/Font/Dubai-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Dubai';
+  src: url('/Font/Dubai-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  --brand-gold: #ede635;
+  --brand-dark: #0f0f0f;
+  --brand-gray: #f5f7f9;
+  --input-color: #eeeee4;
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Dubai', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono);
+
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-gray: var(--brand-gray);
+  --color-input-color: var(--input-color);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Custom Utilities */
+.vh-50 {
+  height: 50vh;
+}
+@media (min-width: 768px) {
+    .vh-50 {
+        height: 80vh;
+    }
+}
+
+.py-10 { 
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.shop-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+.see-more-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.swiper-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: white;
+    border: 1px solid #eee;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.swiper-btn.left { left: 0; }
+.swiper-btn.right { right: 0; }
+
+.specials-track {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.specials-item {
+  flex: 0 0 auto;
+  width: 70%;
+  scroll-snap-align: start;
+}
+@media (min-width: 768px) {
+  .specials-item { width: 25%; }
+}
+
+.line {
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    background-color: #ddd;
+    border-radius: 2px;
+}
+.line.active {
+    background-color: var(--brand-dark);
+}
+
+.animate-fadeUp {
+  animation: fadeUp .6s ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
