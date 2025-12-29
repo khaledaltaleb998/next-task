@@ -83,6 +83,7 @@ export default function Header() {
       </div>
 
       <nav className="bg-white lg:hidden border-t">
+        
         <div className="container mx-auto px-4 py-3">
             <div className="flex justify-between items-center">
                 <Link href="/" className="navbar-brand">
